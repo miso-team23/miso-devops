@@ -1,0 +1,22 @@
+- hosts: ios show version
+  gather_facts: no
+  connection: local
+
+  tasks:
+  - name: include ios configuration
+    set_fact:
+      provider:
+        host: "{{ inventory_hostname }}"
+        username: "{{ ansible_ssh_user }}"
+        password: "{{ ansible_ssh_pass }}"
+
+  - name: show version
+    ios_command:
+     provider: "{{ provider }}"
+     commands:
+      - show version
+      - show int
+      - show ip route
+    register: result
+  - debug: var=result.stdout_lines
+
