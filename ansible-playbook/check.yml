@@ -1,0 +1,13 @@
+# Test tasks to configure panos devices
+
+- name: Test some modules
+  hosts: paloalto
+  connection: local
+  gather_facts: False
+
+  tasks:
+    - name: check if PAN-OS device is ready for being configured
+      panos_check:
+        ip_address: '{{ inventory_hostname }}'
+        username: '{{ ansible_ssh_user }}'
+        password: '{{ ansible_ssh_pass }}'

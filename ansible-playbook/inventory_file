@@ -1,0 +1,6 @@
+[paloalto]
+10.254.250.13
+
+[paloalto:vars]
+ansible_ssh_user=admin
+ansible_ssh_pass=miso2018

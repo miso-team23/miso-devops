@@ -1,0 +1,15 @@
+# Test tasks to configure panos devices
+
+- name: Test some modules
+  hosts: paloalto
+  connection: local
+  gather_facts: False
+
+  tasks:
+    - name: set admin password
+      panos_admin:
+        ip_address: '{{ inventory_hostname }}'
+        password: '{{ ansible_ssh_pass }}'
+        admin_username: '{{ ansible_ssh_user }}'
+        admin_password: "password"
+        commit: False
