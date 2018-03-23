@@ -10,21 +10,21 @@
  cisco_enable_secret=miso2018
 
 # These lines below are used for "ios_ping.yml" by Kageyama
-# [cisco]
-# 10.254.250.11
-# 10.254.250.21
-# 10.254.250.31
+[cisco]
+10.254.250.11
+10.254.250.21
+10.254.250.31
 # 
-# [cisco:vars]
-# cisco_enable_secret=miso2018
-# ansible_user=miso-wg
-# ansible_password=miso2018
+[cisco:vars]
+cisco_enable_secret=miso2018
+ansible_user=miso-wg
+ansible_password=miso2018
 
 # These lines below are used for "ios_static_route.yml" by Kageyama
- [cisco]
- 10.254.250.11
+# [cisco]
+# 10.254.250.11
 
- [cisco:vars]
- cisco_enable_secret=miso2018
- ansible_user=ansible
- ansible_password=miso2018
+# [cisco:vars]
+# cisco_enable_secret=miso2018
+# ansible_user=ansible
+# ansible_password=miso2018
