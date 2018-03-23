@@ -1,0 +1,21 @@
+---
+- hosts: cisco
+  gather_facts: no
+  connection: local #It is magic spel for "ios_" module.
+
+
+  vars:
+    provider:
+      host:     "{{ inventory_hostname }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+
+  tasks:
+  - name: Test reachability to each items using default vrf
+    ios_ping:
+      provider: "{{ provider }}"
+      dest: "{{ item }}"
+    with_items:
+      - 10.1.2.1
+      - 10.10.10.1
+
